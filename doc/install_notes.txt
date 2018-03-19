@@ -28,10 +28,22 @@ make
 
 
 
+Prerequisites:
+
+
  apt-get install opus-tools
  apt-get install libopus-dev
 # apt-get install libcurl4-gnutls-dev
  apt-get install libpulse-dev
  
-apt-get install libasound2-dev
+ apt-get install libasound2-dev
  apt-get install libcurl4-openssl-dev
+
+libtoolize --force
+aclocal
+autoconf
+automake --add-missing
+./configure
+make
+
+
