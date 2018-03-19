@@ -3,6 +3,37 @@ Automake and all that is kinda new to me, but I will make it work.
 Initially, the library will require libcurl, and lasound (Alsa) for linux.
 Later versions will have SDL2.0, SDL1.2, openAL, and other sound sub systems that are used for all the different platforms for silent radiance, and hopefully,
 for your developer app.
+
+
+
+
+Prerequisites:
+
+
+ apt-get install opus-tools
+ apt-get install libopus-dev
+# apt-get install libcurl4-gnutls-dev
+ apt-get install libpulse-dev
+ 
+ apt-get install libasound2-dev
+ apt-get install libcurl4-openssl-dev
+
+libtoolize --force
+aclocal
+autoconf
+automake --add-missing
+./configure
+make
+sudo make install
+
+simple_sr_alsa_curl
+
+
+
+
+
+
+Junk-------------
 http://inti.sourceforge.net/tutorial/libinti/autotoolsproject.html
 https://www.gnu.org/software/automake/manual/html_node/index.html#SEC_Contents
 
@@ -25,13 +56,3 @@ automake --add-missing
 make
 
 
-
-
-
- apt-get install opus-tools
- apt-get install libopus-dev
-# apt-get install libcurl4-gnutls-dev
- apt-get install libpulse-dev
- 
-apt-get install libasound2-dev
- apt-get install libcurl4-openssl-dev
