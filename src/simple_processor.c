@@ -1,6 +1,6 @@
 /*
 Silent Radiance wifi broadcast for digital silent disco.
-Copyright (C) 2017-2018 Hibbard M. Engler
+Copyright (C) 2017-2019 Hibbard M. Engler
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License   
@@ -188,7 +188,11 @@ int framesize;
 /* figure out how many opus packets are there. */
 if ((packetbuffer [0])||(packetbuffer[1]) ) {
   framestart=2;
-  framesize= ((int)(packetbuffer[0]))& 0xff + (((int)(packetbuffer[1]))<<8);
+  unsigned int pl1 = packetbuffer[0];
+  unsigned int pl2 = packetbuffer[1]; 
+  pl2 = pl2 <<8;
+
+  framesize= pl1+pl2;
   }
 else return (-5);
 
