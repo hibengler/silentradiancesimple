@@ -170,7 +170,7 @@ if (sampleSize >PACKETMAXSIZE-2) {
 
 unsigned int flag=0;
 { /* compute flag */
-        int l = packetbuffer[1]+packetbuffer[0]*256+PER_FRAME_OVERHEAD;
+        int l = packetbuffer[0]+packetbuffer[1]*256+PER_FRAME_OVERHEAD;
 	if (l<=PER_FRAME_OVERHEAD) {
 	  logit("bad collection no first frame");
 	  return -2;
